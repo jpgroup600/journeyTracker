@@ -18,6 +18,28 @@
         DEBUG: true
     });
 </script>
+
+
+<Script id="user-journey-tracker" strategy="afterInteractive">
+      {`
+        (function(w,d,t,a,r){
+          w.UserJourneyTracker = w.UserJourneyTracker || {};
+          a=d.getElementsByTagName('head')[0];
+          r=d.createElement('script');
+          r.async=1;
+          r.src=t;
+          r.onload = function() {
+            w.UserJourneyTracker.init({
+              API_ENDPOINT: '/api/tracking',
+              DEBUG: true
+            });
+          };
+          a.appendChild(r);
+        })(window,document,'https://cdn.jsdelivr.net/gh/jpgroup600/journeyTracker@1.0.0/userJourneyTracker.min.js');
+      `}
+    </Script>
+
+
 </pre>
 
 <h2>Usage</h2>

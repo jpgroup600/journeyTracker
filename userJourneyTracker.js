@@ -1,7 +1,7 @@
 
 (function() {
 // Constants
-const CONFIG = {
+const DEFAULT_CONFIG = {
     COOKIE_NAME: 'userJourney',
     API_ENDPOINT: '/api/userVisit',
     COOKIE_PATH: '/',

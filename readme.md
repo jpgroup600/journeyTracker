@@ -8,6 +8,7 @@
 
 <p>To install the user journey tracker, you need to add the following code to your website:</p>
 
+<h3>for Vanilla JS</h3>
 <pre>
 
 
@@ -19,7 +20,10 @@
     });
 </script>
 
+</pre>
 
+<h3>for React</h3>
+<pre>
 <Script id="user-journey-tracker" strategy="afterInteractive">
       {`
         (function(w,d,t,a,r){
@@ -31,7 +35,7 @@
           r.onload = function() {
             w.UserJourneyTracker.init({
               API_ENDPOINT: '/api/tracking',
-              DEBUG: true
+              DEBUG: true,
             });
           };
           a.appendChild(r);
@@ -53,10 +57,16 @@ const CONFIG = {
     COOKIE_NAME: 'userJourney',
     API_ENDPOINT: '/api/userVisit',
     COOKIE_PATH: '/',
-    DEBUG :false
+    TRACK_ALL: false,
+    TRACKING_CLASSES: [{ 'track-portfolio': 'portfolio' }, { 'track-web-portfolio': 'web-portfolio' }],
+    DEBUG: false
 };
 </pre>
 
+<p>TRACK ALL : This is a boolean value that determines if all the elements on the page should be tracked. If it is set to true, then all the elements on the page will be tracked. If it is set to false, then only the elements with the class names specified in the TRACKING_CLASSES array will be tracked.</p>
 
+<p>TRACKING_CLASSES : This is an array of objects that contains the class names of the elements that should be tracked. The key is the class name of the element and the value is the name of the element that should be tracked.</p>
+
+<h3>DEBUG : This is a boolean value that determines if the debug mode should be enabled. this is Not made yet</h3>
 
 <pre>
